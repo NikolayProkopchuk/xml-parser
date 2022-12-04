@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epaperRequest>
+    <deviceInfo name="Browser" id="test@comp">
+        <screenInfo width="1920" height="1080" dpi="160"/>
+        <osInfo name="Browser" version="1.0"/>
+        <appInfo>
+            <newspaperName>Play Boy</newspaperName>
+            <version>1.0</version>
+        </appInfo>
+    </deviceInfo>
+    <getPages editionDefId="10" publicationDate="2020-06-06"/>
+</epaperRequest>

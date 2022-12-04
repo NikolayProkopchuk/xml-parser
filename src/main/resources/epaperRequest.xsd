@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+            elementFormDefault="qualified" jaxb:version="2.0">
+
+    <xsd:element name="epaperRequest">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element name="deviceInfo">
+                    <xsd:complexType>
+                        <xsd:all>
+                            <xsd:element name="screenInfo">
+                                <xsd:complexType>
+                                    <xsd:attribute name="width" type="xsd:int"/>
+                                    <xsd:attribute name="height" type="xsd:int"/>
+                                    <xsd:attribute name="dpi" type="xsd:int"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="osInfo">
+                                <xsd:complexType>
+                                    <xsd:attribute name="name" type="xsd:string"/>
+                                    <xsd:attribute name="version" type="xsd:decimal"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="appInfo">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="newspaperName" type="xsd:string"/>
+                                        <xsd:element name="version" type="xsd:decimal"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:all>
+                        <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        <xsd:attribute name="id" type="xsd:string" use="required"/>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="getPages">
+                    <xsd:complexType>
+                        <xsd:attribute name="editionDefId" type="xsd:int" />
+                        <xsd:attribute name="publicationDate" type="xsd:date"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:annotation>
+        <xsd:appinfo>
+            <jaxb:schemaBindings>
+                <jaxb:package name="com.prokopchuk.xmlparser.domain"/>
+            </jaxb:schemaBindings>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+</xsd:schema>

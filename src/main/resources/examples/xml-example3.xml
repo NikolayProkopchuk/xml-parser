@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epaperRequest>
+    <deviceInfo name="Browser" id="test@comp">
+        <screenInfo width="1920" height="1080" dpi="150"/>
+        <osInfo name="Browser" version="1.0"/>
+        <appInfo>
+            <newspaperName>Maxim</newspaperName>
+            <version>1.0</version>
+        </appInfo>
+    </deviceInfo>
+    <getPages editionDefId="1" publicationDate="2022-06-06"/>
+</epaperRequest>
