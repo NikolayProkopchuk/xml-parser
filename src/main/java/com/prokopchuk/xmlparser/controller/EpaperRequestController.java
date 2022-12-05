@@ -33,12 +33,12 @@ public class EpaperRequestController {
 
     private final Validator validator;
 
-    private final XmlMapper xmlMapper;
-
     @PostMapping
     public EpaperRequestEntity uploadXml(@RequestParam("file") MultipartFile file) throws IOException, SAXException {
         Source xmlFile = new StreamSource(file.getInputStream());
         validator.validate(xmlFile);
+
+        XmlMapper xmlMapper = new XmlMapper();
 
         var epaperRequest = xmlMapper.readValue(file.getInputStream(), EpaperRequest.class);
         return epaperRequestService.saveEpaperRequest(epaperRequest, file.getOriginalFilename());

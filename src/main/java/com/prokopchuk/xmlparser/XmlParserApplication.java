@@ -1,15 +1,12 @@
 package com.prokopchuk.xmlparser;
 
 import javax.xml.XMLConstants;
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 
 import java.net.URL;
 
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -30,11 +27,6 @@ public class XmlParserApplication {
         Schema schema = schemaFactory.newSchema(schemaFile);
 
         return schema.newValidator();
-    }
-
-    @Bean
-    public XmlMapper xmlMapper() {
-        return new XmlMapper();
     }
 
 }
